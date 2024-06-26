@@ -13,7 +13,7 @@ const SWStore = create<SWState>()((set) => ({
     planets: [],
     fetched: false,
     setPlanets: planets => set({ planets })
-}))
+}));
 
 export const setupStore = async () => {
     const queryResult = await client.query<GetPlanetsData>({
@@ -22,7 +22,7 @@ export const setupStore = async () => {
 
     SWStore.setState({ fetched: true });
     SWStore.setState({ planets: queryResult.data.allPlanets.planets });
-}
+};
 
 
 export default SWStore;

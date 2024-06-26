@@ -1,5 +1,5 @@
-import client from "@/lib/apollo-client"
-import { ApolloProvider } from "@apollo/client"
+import client from "@/lib/apollo-client";
+import { ApolloProvider } from "@apollo/client";
 
 type AppProviderProps = {
   children: React.ReactNode;
@@ -11,7 +11,7 @@ const MainProvider = ({ children }: AppProviderProps) => {
     <ApolloProvider client={client}>
       {children}
     </ApolloProvider>
-  )
+  );
 };
 
 export default MainProvider;

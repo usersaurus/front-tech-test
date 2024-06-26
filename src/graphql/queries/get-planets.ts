@@ -11,6 +11,7 @@ const GET_PLANETS = gql`
   query AllPlanetsQuery {
     allPlanets {
       planets {
+        id
         name
         diameter
         climates

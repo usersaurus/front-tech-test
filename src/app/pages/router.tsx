@@ -19,12 +19,25 @@ export const createRouter = () => createBrowserRouter([
     children: [
       {
         path: 'planets',
-        lazy: async () => {
-          const { PlanetsRoute } = await import('@/app/pages/planets/planets');
+        children: [
+          {
+            index: true,
+            lazy: async () => {
+              const { PlanetsRoute } = await import('@/app/pages/planets/planets');
 
-          return { Component: PlanetsRoute };
-        }
+              return { Component: PlanetsRoute };
+            },
+          },
+          {
+            path: ':id',
+            lazy: async () => {
+              const { PlanetViewRoute } = await import('@/app/pages/planets/planet-view');
+
+              return { Component: PlanetViewRoute };
+            }
+          }
+        ]
       }
     ]
   }
-])
+]);

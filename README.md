@@ -4,11 +4,12 @@
 
 Just launch the following command
 
-`yarn dev`
+> `yarn dev`
 
 ## Launching test
+Test are launched by `vitest` running
 
-WIP
+> `yarn test`
 
 ## Extra info
 

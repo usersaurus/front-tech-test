@@ -1,17 +1,22 @@
-import { beforeAll, describe, expect, it } from 'vitest';
+import { beforeAll, describe, expect, it, vi } from 'vitest';
 import { useSWStore } from '@/store';
 import { planets } from '@/testing/mocks/planets';
 import { renderHook, act } from '@testing-library/react';
 import { usePlanets } from '../usePlanets';
+import { idGenerator } from '@/utils/id-generator';
 
 describe('usePlanet', () => {
   beforeAll(() => {
     useSWStore.setState({ planets: planets, fetched: false });
   });
 
+  vi.mock('@/utils/id-generator', () => ({
+    idGenerator: () => '123'
+  }));
+
   it('should add planets with the correct id', () => {
     const { result } = renderHook(() => usePlanets());
-    const expectedId = btoa(Date.now().toString());
+    const expectedId = idGenerator();
 
     act(() => {
       result.current.addPlanet({

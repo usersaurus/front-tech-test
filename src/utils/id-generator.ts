@@ -1,0 +1,1 @@
+export const idGenerator = () => btoa(Date.now().toString());

@@ -1,5 +1,6 @@
 import { useSWStore } from '@/store';
 import { Planet } from '@/types/planet';
+import { idGenerator } from '@/utils/id-generator';
 
 export const usePlanets = () => {
   const planets = useSWStore(state => state.planets);
@@ -9,7 +10,7 @@ export const usePlanets = () => {
   const addPlanet = useSWStore(state => state.addPlanet);
 
   const setupAddPlanet = (planet: Omit<Planet, 'id'>) => {
-    const id = btoa(Date.now().toString());
+    const id = idGenerator();
 
     addPlanet({ ...planet, id });
   };

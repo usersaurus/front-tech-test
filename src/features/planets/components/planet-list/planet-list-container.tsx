@@ -1,8 +1,8 @@
-import getPlanets from "../../actions/get-planets";
+import { usePlanets } from "../../hooks/usePlanets";
 import PlanetList from "./planet-list";
 
 const PlanetListContainer = () => {
-  const planets = getPlanets();
+  const { planets } = usePlanets();
 
   return (
     <PlanetList planets={planets} />

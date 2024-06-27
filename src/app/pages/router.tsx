@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { AppRoot } from "@/app/root";
-import SWStore, { setupStore } from "@/store";
+import { useSWStore, setupStore } from "@/store";
 
 export const createRouter = () => createBrowserRouter([
   {
@@ -9,7 +9,7 @@ export const createRouter = () => createBrowserRouter([
       <AppRoot />
     ),
     loader: async () => {
-      const fetched = SWStore(state => state.fetched);
+      const fetched = useSWStore(state => state.fetched);
       if (fetched) return null;
 
       await setupStore();

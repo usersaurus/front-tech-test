@@ -7,7 +7,7 @@ type TableProps = {
 
 const DataTable = ({ header, children }: TableProps) => {
   return (
-    <Table.Root>
+    <Table.Root size="3">
       <Table.Header>
         <Table.Row>
           {header.map((item) => (

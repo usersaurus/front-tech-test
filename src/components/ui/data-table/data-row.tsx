@@ -10,7 +10,7 @@ type DataRowProps = {
 
 const DataRow = ({ rowHeaderCell, data }: DataRowProps) => {
   return (
-    <Table.Row>
+    <Table.Row align="center">
       <Table.RowHeaderCell>{rowHeaderCell}</Table.RowHeaderCell>
       {data.map((item, index) => (
         <Table.Cell key={`${rowHeaderCell}-${index}`}>{item}</Table.Cell>

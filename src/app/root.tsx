@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
+import { Container } from '@radix-ui/themes';
 
 export const AppRoot = () => {
   return (
-    <div>
+    <Container>
       <Outlet />
-    </div>
+    </Container>
   );
 };

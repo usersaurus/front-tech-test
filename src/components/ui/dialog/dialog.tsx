@@ -4,7 +4,8 @@ import { TrashIcon } from "@radix-ui/react-icons";
 type DialogProps = {
   onConfirm: () => void;
   onCancel: () => void;
-  alertDescription: string;
+  title: string;
+  description: string;
   cancelText?: string;
   confirmText?: string;
   icon?: React.ReactNode;
@@ -18,9 +19,9 @@ const Dialog = (props: DialogProps) =>
       </IconButton>
     </AlertDialog.Trigger>
     <AlertDialog.Content maxWidth="450px">
-      <AlertDialog.Title>Delete planet</AlertDialog.Title>
+      <AlertDialog.Title>{props.title}</AlertDialog.Title>
       <AlertDialog.Description size="2">
-        {props.alertDescription}
+        {props.description}
       </AlertDialog.Description>
 
       <Flex gap="3" mt="4" justify="end">

@@ -12,7 +12,8 @@ const DeletePlanet = ({ planet }: DeletePlanetProps) => {
 
   return (
     <Dialog
-      alertDescription="Are you sure you want to remove this planet from the Rebel Alliance database? The Galactic Empire will know."
+      title="Delete planet"
+      description="Are you sure you want to remove this planet from the Rebel Alliance database? The Galactic Empire will know."
       confirmText="Delete planet"
       cancelText="Cancel"
       onConfirm={() => {

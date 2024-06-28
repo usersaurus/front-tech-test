@@ -2,7 +2,8 @@ import { expect, describe, it, beforeAll } from 'vitest';
 import Dialog from '../dialog';
 import { render, screen, fireEvent } from '@testing-library/react';
 
-const alertDescription = 'Are you sure you want to remove this planet from the Rebel Alliance database? The Galactic Empire will know.';
+const title = 'Delete planet';
+const description = 'Are you sure you want to remove this planet from the Rebel Alliance database? The Galactic Empire will know.';
 const confirmText = 'Delete planet';
 const cancelText = 'Cancel';
 
@@ -10,7 +11,8 @@ describe('Dialog', () => {
   beforeAll(() => {
     render(
       <Dialog
-        alertDescription={alertDescription}
+        title={title}
+        description={description}
         confirmText={confirmText}
         cancelText={cancelText}
         onConfirm={() => { }}
@@ -28,6 +30,7 @@ describe('Dialog', () => {
     fireEvent.click(screen.getByRole('button', { name: 'alert button' }));
 
     expect(screen.getByRole('button', { name: confirmText })).toBeInTheDocument();
-    expect(screen.getByText(alertDescription)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: title })).toBeInTheDocument();
+    expect(screen.getByText(description)).toBeInTheDocument();
   });
 });

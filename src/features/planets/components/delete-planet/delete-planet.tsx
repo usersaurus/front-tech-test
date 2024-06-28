@@ -2,6 +2,7 @@ import Dialog from "@/components/ui/dialog/dialog";
 import { Planet } from "@/types/planet";
 import { usePlanets } from "@/features/planets/hooks/usePlanets";
 import { TrashIcon } from "@radix-ui/react-icons";
+import { IconButton } from "@radix-ui/themes";
 
 interface DeletePlanetProps {
   planet: Planet;
@@ -19,8 +20,11 @@ const DeletePlanet = ({ planet }: DeletePlanetProps) => {
       onConfirm={() => {
         deletePlanet(planet);
       }}
-      onCancel={() => { }}
-      icon={<TrashIcon />}
+      button={
+        <IconButton>
+          <TrashIcon />
+        </IconButton>
+      }
     />
   );
 };

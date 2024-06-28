@@ -16,14 +16,15 @@ export const useSWStore = create<SWState>()((set) => ({
   fetched: false,
   setPlanets: planets => set({ planets }),
   deletePlanet: planet => set(state => ({ planets: state.planets.filter(p => p.id !== planet.id) })),
-  addPlanet: planet => set(state => ({ planets: [...state.planets, planet] })
-  )
+  addPlanet: planet => set(state => ({ planets: [...state.planets, planet] }))
 }));
 
 export const setupStore = async () => {
   const queryResult = await client.query<GetPlanetsData>({
     query: GET_PLANETS
   });
+
+  console.log(queryResult.data.allPlanets.planets);
 
   useSWStore.setState({ fetched: true });
   useSWStore.setState({ planets: queryResult.data.allPlanets.planets });

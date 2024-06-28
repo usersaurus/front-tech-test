@@ -1,27 +1,21 @@
 import { Planet } from '@/types/planet';
-import React from 'react';
-import DeletePlanet from '../delete-planet';
+import { planetKeys } from '@/features/planets/utils/planetUtils';
+import DataTable from '@/components/ui/data-table/data-table';
+import PlanetRow from './planet-row';
 
 interface PlanetListProps {
   planets: Planet[];
 }
 
-const PlanetList: React.FC<PlanetListProps> = ({ planets }) => {
+const PlanetList = ({ planets }: PlanetListProps) => {
   return (
     <div>
       <h2>Planet List</h2>
-      <ul>
+      <DataTable header={[...planetKeys, 'actions']}>
         {planets.map(planet => (
-          <li key={planet.id}>
-            <h3>{planet.name}</h3>
-            <p>Id: {planet.id}</p>
-            <p>Diameter: {planet.diameter} km</p>
-            <p>Climates: {planet.climates}</p>
-            <p>Population: {planet.population || 0}</p>
-            <DeletePlanet planet={planet} />
-          </li>
+          <PlanetRow key={planet.id} planet={planet} />
         ))}
-      </ul>
+      </DataTable>
     </div>
   );
 };

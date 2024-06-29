@@ -12,7 +12,7 @@ const PlanetRowActions = ({ planet }: PlanetRowActionsProps) => {
   const navigate = useNavigate();
 
   const handleView = () => {
-    navigate(`/planets/${planet.id}`);
+    navigate(`/${planet.id}`);
   };
 
   return (

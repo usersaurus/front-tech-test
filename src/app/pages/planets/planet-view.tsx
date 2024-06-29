@@ -1,3 +1,4 @@
+import PlanetActionButtons from '@/features/planets/components/planet-action-buttons/planet-action-buttons';
 import PlanetViewContainer from '@/features/planets/components/planet-view';
 import ResidentListContainer from '@/features/residents/components/resident-list';
 import { Card, Flex } from '@radix-ui/themes';
@@ -8,11 +9,15 @@ export const PlanetViewRoute = () => {
   if (!id) return <>Planet not found</>;
 
   return (
-    <Flex align="center" justify="center" height="100%">
-      <Card size="4" variant="surface">
-        <Flex gap="8" >
+    <Flex justify="center" m="4">
+      <Card size="4">
+        <Flex gap="8" direction={{
+          'initial': 'column',
+          'xs': 'row'
+        }}>
           <PlanetViewContainer planetId={id} />
           <ResidentListContainer planetId={id} />
+          <PlanetActionButtons planetId={id} />
         </Flex>
       </Card>
     </Flex>

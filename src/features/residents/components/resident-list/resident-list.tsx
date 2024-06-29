@@ -16,7 +16,7 @@ const ResidentList = ({ residents }: ResidentListProps) => {
 
   return (
     <Flex direction="column">
-      <Heading mb="4">Residents</Heading>
+      <Heading size="4" mb="4">Residents</Heading>
       <DataTable header={residentKeys} size="1">
         {residents.map((resident) => (
           <ResidentRow key={resident.id} resident={resident} />

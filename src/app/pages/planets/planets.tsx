@@ -3,7 +3,7 @@ import { Card } from '@radix-ui/themes';
 
 export const PlanetsRoute = () => {
   return (
-    <Card mt="4" size="4">
+    <Card size="4" m="4">
       <PlanetListContainer />
     </Card>
   );

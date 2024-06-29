@@ -7,11 +7,13 @@ interface PlanetListProps {
   planets: Planet[];
 }
 
+const tableHeader = [...planetKeys, 'actions'];
+
 const PlanetList = ({ planets }: PlanetListProps) => {
   return (
     <div>
       <h2>Planet List</h2>
-      <DataTable header={[...planetKeys, 'actions']}>
+      <DataTable header={tableHeader}>
         {planets.map(planet => (
           <PlanetRow key={planet.id} planet={planet} />
         ))}

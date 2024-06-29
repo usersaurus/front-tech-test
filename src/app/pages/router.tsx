@@ -9,7 +9,7 @@ export const createRouter = () => createBrowserRouter([
       <AppRoot />
     ),
     loader: async () => {
-      const fetched = useSWStore(state => state.fetched);
+      const fetched = useSWStore.getState().fetched;
       if (fetched) return null;
 
       await setupStore();
@@ -18,7 +18,7 @@ export const createRouter = () => createBrowserRouter([
     },
     children: [
       {
-        path: 'planets',
+        path: '/',
         children: [
           {
             index: true,

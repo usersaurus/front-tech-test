@@ -10,7 +10,7 @@ const PlanetViewContainer = ({ planetId }: PlanetViewContainerProps) => {
   const { getPlanetById } = usePlanets();
   const planet = getPlanetById(planetId);
 
-  if (!planet) return <>Planet not found</>;
+  if (!planet) return <p>Planet not found</p>;
 
   return (
     <PlanetView planet={planet} />

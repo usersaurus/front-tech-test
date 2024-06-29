@@ -10,7 +10,7 @@ interface ResidentListContainerProps {
 const ResidentListContainer = ({ planetId }: ResidentListContainerProps) => {
   const { residents = [], loading, error } = useResidents(planetId);
 
-  if (error) return <p>Error</p>;
+  if (error) return <p>No residents found</p>;
 
   return (
     <Skeleton loading={loading}>

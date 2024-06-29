@@ -6,14 +6,16 @@ import { create } from 'zustand';
 interface SWState {
   planets: Planet[]
   fetched: boolean
+  getPlanetById: (id: string) => Planet | undefined
   setPlanets: (planets: Planet[]) => void
   deletePlanet: (planet: Planet) => void
-  addPlanet: (planet: Planet) => void
+  addPlanet: (planet: Planet) => void,
 }
 
-export const useSWStore = create<SWState>()((set) => ({
+export const useSWStore = create<SWState>()((set, get) => ({
   planets: [],
   fetched: false,
+  getPlanetById: (id: string) => get().planets.find(p => p.id === id),
   setPlanets: planets => set({ planets }),
   deletePlanet: planet => set(state => ({ planets: state.planets.filter(p => p.id !== planet.id) })),
   addPlanet: planet => set(state => ({ planets: [...state.planets, planet] }))

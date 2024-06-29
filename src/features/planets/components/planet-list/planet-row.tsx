@@ -7,11 +7,13 @@ type PlanetRowProps = {
 };
 
 const PlanetRow = ({ planet }: PlanetRowProps) => {
-  const { name, id, ...rest } = planet;
-  const restValues = Object.values(rest)
-    .map(value => value?.toString() ?? 'unknown');
-
+  const { name, id, climates, terrains, ...rest } = planet;
   const PlanetRowActionsComponent = <PlanetRowActions planet={planet} />;
+  const restValues = Object.values({
+    climates: climates.join(", "),
+    terrains: terrains.join(", "),
+    ...rest
+  });
 
   return (
     <DataRow rowHeaderCell={name} data={[...restValues, PlanetRowActionsComponent]} key={id} />

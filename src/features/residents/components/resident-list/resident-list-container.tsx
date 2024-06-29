@@ -1,22 +1,19 @@
-import React from 'react';
 import ResidentList from './resident-list';
 import { useResidents } from '../../hooks/useResidents';
+import { Planet } from '@/types/planet';
 
 interface ResidentListContainerProps {
-  planetId: string;
+  planetId: Planet['id'];
 }
 
-const ResidentListContainer: React.FC<ResidentListContainerProps> = ({ planetId }) => {
+const ResidentListContainer = ({ planetId }: ResidentListContainerProps) => {
   const { residents = [], loading, error } = useResidents(planetId);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
 
   return (
-    <div>
-      <h2>Resident List</h2>
-      <ResidentList residents={residents} />
-    </div>
+    <ResidentList residents={residents} />
   );
 };
 

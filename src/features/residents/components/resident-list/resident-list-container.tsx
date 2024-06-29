@@ -1,6 +1,7 @@
 import ResidentList from './resident-list';
 import { useResidents } from '../../hooks/useResidents';
 import { Planet } from '@/types/planet';
+import { Box, Skeleton } from '@radix-ui/themes';
 
 interface ResidentListContainerProps {
   planetId: Planet['id'];
@@ -9,11 +10,14 @@ interface ResidentListContainerProps {
 const ResidentListContainer = ({ planetId }: ResidentListContainerProps) => {
   const { residents = [], loading, error } = useResidents(planetId);
 
-  if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
 
   return (
-    <ResidentList residents={residents} />
+    <Skeleton loading={loading}>
+      <Box>
+        <ResidentList residents={residents} />
+      </Box>
+    </Skeleton>
   );
 };
 

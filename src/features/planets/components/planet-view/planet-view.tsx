@@ -1,6 +1,7 @@
 import { Planet } from "@/types/planet";
-import { Box, DataList, Heading } from "@radix-ui/themes";
+import { Box, DataList, Flex, Heading } from "@radix-ui/themes";
 import DeletePlanet from "../delete-planet";
+import BackButton from "./back-button";
 
 type PlanetViewProps = {
   planet: Planet
@@ -27,7 +28,10 @@ const PlanetView = ({ planet }: PlanetViewProps) => {
           );
         })}
       </DataList.Root>
-      <DeletePlanet planet={planet} />
+      <Flex gap="4">
+        <DeletePlanet planet={planet} />
+        <BackButton />
+      </Flex>
     </Box>
   );
 };

@@ -7,7 +7,7 @@ interface PlanetListProps {
   planets: Planet[];
 }
 
-const tableHeader = [...planetKeys, 'actions'];
+const tableHeader: (keyof Planet | 'actions')[] = [...planetKeys, 'actions'];
 
 const PlanetList = ({ planets }: PlanetListProps) => {
   return (

@@ -22,11 +22,12 @@ const DeletePlanet = ({ planet }: DeletePlanetProps) => {
         deletePlanet(planet);
       }}
       button={
-        <Tooltip content="Delete planet">
-          <IconButton>
+
+        <IconButton>
+          <Tooltip content="Delete planet">
             <TrashIcon />
-          </IconButton>
-        </Tooltip>
+          </Tooltip>
+        </IconButton>
       }
     />
 

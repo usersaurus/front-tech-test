@@ -1,6 +1,6 @@
 import { Flex } from "@radix-ui/themes";
 import DeletePlanet from "../delete-planet";
-import BackButton from "../planet-view/back-button";
+import BackButton from "./back-button";
 import { usePlanets } from "../../hooks/usePlanets";
 
 type PlanetActionButtonsProps = {

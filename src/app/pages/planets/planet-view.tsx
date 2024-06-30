@@ -1,4 +1,4 @@
-import PlanetActionButtons from '@/features/planets/components/planet-action-buttons/planet-action-buttons';
+import PlanetActionButtons from '@/features/planets/components/planet-view/planet-action-buttons';
 import PlanetViewContainer from '@/features/planets/components/planet-view';
 import ResidentListContainer from '@/features/residents/components/resident-list';
 import { Card, Flex } from '@radix-ui/themes';

@@ -1,5 +1,5 @@
 import { EyeOpenIcon } from "@radix-ui/react-icons";
-import { Flex, IconButton } from "@radix-ui/themes";
+import { Flex, IconButton, Tooltip } from "@radix-ui/themes";
 import { useNavigate } from "react-router-dom";
 import { Planet } from "@/types/planet";
 import DeletePlanet from "../delete-planet";
@@ -17,9 +17,11 @@ const PlanetRowActions = ({ planet }: PlanetRowActionsProps) => {
 
   return (
     <Flex gap="3">
-      <IconButton onClick={handleView}>
-        <EyeOpenIcon />
-      </IconButton>
+      <Tooltip content="View details">
+        <IconButton onClick={handleView}>
+          <EyeOpenIcon />
+        </IconButton>
+      </Tooltip>
       <DeletePlanet planet={planet} />
     </Flex>
   );

@@ -1,24 +1,35 @@
 import { Planet } from '@/types/planet';
-import { planetKeys } from '@/features/planets/utils/planetUtils';
-import DataTable from '@/components/ui/data-table/data-table';
-import PlanetRow from './planet-row';
-import { Box, Heading } from '@radix-ui/themes';
+import { Box, Card, Flex, Grid, Heading } from '@radix-ui/themes';
+import PlanetView from '../planet-view/planet-view';
+import PlanetRowActions from './planet-row-actions';
 
 interface PlanetListProps {
   planets: Planet[];
 }
 
-const tableHeader: (keyof Planet | 'actions')[] = [...planetKeys, 'actions'];
-
 const PlanetList = ({ planets }: PlanetListProps) => {
   return (
     <Box>
       <Heading mb="4">Planets</Heading>
-      <DataTable header={tableHeader}>
-        {planets.map(planet => (
-          <PlanetRow key={planet.id} planet={planet} />
+      <Grid gap="4" columns={{
+        initial: "1",
+        sm: "2",
+        md: "3",
+      }}>
+        {planets.map((planet) => (
+          <Card key={planet.id} size="3">
+            <Flex
+              justify="between"
+              direction="column"
+              height="100%"
+              gap="6"
+            >
+              <PlanetView planet={planet} />
+              <PlanetRowActions planet={planet} />
+            </Flex>
+          </Card>
         ))}
-      </DataTable>
+      </Grid>
     </Box>
   );
 };

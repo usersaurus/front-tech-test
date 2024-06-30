@@ -10,6 +10,7 @@ interface SWState {
   setPlanets: (planets: Planet[]) => void
   deletePlanet: (planet: Planet) => void
   addPlanet: (planet: Planet) => void,
+  updatePlanet: (planet: Planet) => void
 }
 
 export const useSWStore = create<SWState>()((set, get) => ({
@@ -18,15 +19,16 @@ export const useSWStore = create<SWState>()((set, get) => ({
   getPlanetById: (id: string) => get().planets.find(p => p.id === id),
   setPlanets: planets => set({ planets }),
   deletePlanet: planet => set(state => ({ planets: state.planets.filter(p => p.id !== planet.id) })),
-  addPlanet: planet => set(state => ({ planets: [...state.planets, planet] }))
+  addPlanet: planet => set(state => ({ planets: [...state.planets, planet] })),
+  updatePlanet: planet => set(state => ({
+    planets: state.planets.map(p => p.id === planet.id ? { ...p, ...planet } : p)
+  })),
 }));
 
 export const setupStore = async () => {
   const queryResult = await client.query<GetPlanetsData>({
     query: GET_PLANETS
   });
-
-  console.log(queryResult.data.allPlanets.planets);
 
   useSWStore.setState({ fetched: true });
   useSWStore.setState({ planets: queryResult.data.allPlanets.planets });

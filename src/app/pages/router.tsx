@@ -29,12 +29,21 @@ export const createRouter = () => createBrowserRouter([
             },
           },
           {
-            path: ':id',
+            path: '/:id',
             lazy: async () => {
+              console.log('planet view');
               const { PlanetViewRoute } = await import('@/app/pages/planets/planet-view');
 
               return { Component: PlanetViewRoute };
-            }
+            },
+          },
+          {
+            path: ':id/edit',
+            lazy: async () => {
+              const { EditPlanetRoute } = await import('@/app/pages/planets/edit-planet');
+
+              return { Component: EditPlanetRoute };
+            },
           }
         ]
       }

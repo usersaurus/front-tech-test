@@ -37,7 +37,10 @@ const EditPlanet = ({ planet }: EditPlanetProps) => {
   };
 
   return (
-    <Container width="50vw">
+    <Container width={{
+      initial: "80vw",
+      xs: "50vw"
+    }}>
       <Heading mb="4">Edit Planet</Heading>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormField fieldName="name" errors={errors} register={register} />

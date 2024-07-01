@@ -4,7 +4,6 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
 
 describe('AddButton', () => {
-
   beforeAll(() => {
     render(<AddButton />);
   });

@@ -33,6 +33,9 @@ Instead of directly using the store, I thought it could be a good idea to create
 
 Apart from that, the usePlanet hooks manages any needed transformation, keeping or store decoupled of specific feature needs.
 
+## Tests
+
+There are a good number of tests of different types and complexities, but not all components were covered because of time constraints.
 
 ## Automatic deploys with Netlify
 

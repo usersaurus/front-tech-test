@@ -26,6 +26,14 @@ Taking a look at the graphql api I saw that there you could retrieve all planets
 
 Since it was the only oportunity to show some async data management, I thought it could be a good idea to fetch the residents list to the graphQL api only when needed. That's why it take some time to show it, but it's fast anyway, and the loading process is under a skeleton animation, so it's kinda cool.
 
+
+## The usePlanets hook
+
+Instead of directly using the store, I thought it could be a good idea to create a custom hook for scoping parts of the store at feature level. This way we can manage, for example, related store things of a feature in a cleaner way.
+
+Apart from that, the usePlanet hooks manages any needed transformation, keeping or store decoupled of specific feature needs.
+
+
 ## Automatic deploys with Netlify
 
 An automatic deploy triggers everytime I push anything to the main branch. It also runs all the tests before deploying anything, and things are only published when everything is green.

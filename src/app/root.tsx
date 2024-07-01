@@ -4,7 +4,7 @@ import classes from './root.module.css';
 
 export const AppRoot = () => {
   return (
-    <Box className={classes.background}>
+    <Box className={classes.background} minHeight="100vh">
       <Container>
         <Outlet />
       </Container>

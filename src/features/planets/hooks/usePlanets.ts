@@ -6,11 +6,14 @@ import { ToFormPlanet } from '../types/to-form-planet';
 export const usePlanets = () => {
   const planets = useSWStore(state => state.planets);
   const fetched = useSWStore(state => state.fetched);
+  const lastRequestedPage = useSWStore(state => state.lastRequestedPage);
+  const getPaginatedPlanets = useSWStore(state => state.getPaginatedPlanets);
   const setPlanets = useSWStore(state => state.setPlanets);
   const deletePlanet = useSWStore(state => state.deletePlanet);
   const addPlanet = useSWStore(state => state.addPlanet);
   const getPlanetById = useSWStore(state => state.getPlanetById);
   const updatePlanet = useSWStore(state => state.updatePlanet);
+  const setLastRequestedPage = useSWStore(state => state.setLastRequestedPage);
 
   const setupUpdatePlanet = (data: ToFormPlanet, id: Planet['id']) => {
     const planet = {
@@ -41,6 +44,9 @@ export const usePlanets = () => {
   return {
     planets,
     fetched,
+    lastRequestedPage,
+    setLastRequestedPage,
+    getPaginatedPlanets,
     getPlanetById,
     setPlanets,
     deletePlanet,

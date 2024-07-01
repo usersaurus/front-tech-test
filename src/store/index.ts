@@ -5,7 +5,10 @@ import { create } from 'zustand';
 
 interface SWState {
   planets: Planet[]
-  fetched: boolean
+  fetched: boolean,
+  lastRequestedPage: number,
+  setLastRequestedPage: (page: number) => void
+  getPaginatedPlanets: (page: number, limit: number) => { planets: Planet[], total: number }
   getPlanetById: (id: string) => Planet | undefined
   setPlanets: (planets: Planet[]) => void
   deletePlanet: (planet: Planet) => void
@@ -16,6 +19,17 @@ interface SWState {
 export const useSWStore = create<SWState>()((set, get) => ({
   planets: [],
   fetched: false,
+  lastRequestedPage: 1,
+  setLastRequestedPage: (page: number) => set({ lastRequestedPage: page }),
+  getPaginatedPlanets: (page, limit) => {
+    const start = (page - 1) * limit;
+    const end = start + limit;
+
+    return {
+      planets: get().planets.slice(start, end),
+      total: Math.ceil(get().planets.length / limit)
+    };
+  },
   getPlanetById: (id: string) => get().planets.find(p => p.id === id),
   setPlanets: planets => set({ planets }),
   deletePlanet: planet => set(state => ({ planets: state.planets.filter(p => p.id !== planet.id) })),

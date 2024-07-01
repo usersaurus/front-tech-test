@@ -9,7 +9,6 @@ type PaginationProps = {
 };
 
 const Pagination = ({ current, total, onChange }: PaginationProps) => {
-  console.log(current, total);
   const [currentPage, setCurrentPage] = useState(current);
   const buttonStatus = {
     prev: currentPage <= 1,
@@ -32,11 +31,17 @@ const Pagination = ({ current, total, onChange }: PaginationProps) => {
 
   return (
     <Flex align="center" gap="4">
-      <IconButton onClick={handlePrev} disabled={buttonStatus.prev}>
+      <IconButton onClick={handlePrev}
+        disabled={buttonStatus.prev}
+        aria-label="previous button"
+      >
         <CaretLeftIcon />
       </IconButton>
       <span>{currentPage}</span>
-      <IconButton onClick={handleNext} disabled={buttonStatus.next}>
+      <IconButton onClick={handleNext}
+        disabled={buttonStatus.next}
+        aria-label="next button"
+      >
         <CaretRightIcon />
       </IconButton>
     </Flex>

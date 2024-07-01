@@ -9,7 +9,7 @@ type FormFieldProps = {
 
 const FormField = ({ name, errors = {}, register }: FormFieldProps) => {
   const hasError = errors[name]?.message;
-  console.log(errors[name]?.message?.toString());
+
   return (
     <>
       <label htmlFor="name">{name}</label>

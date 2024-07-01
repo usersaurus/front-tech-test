@@ -22,6 +22,10 @@ At first I thought of retrieving all the pages one by one with a recursive call 
 
 Taking a look at the graphql api I saw that there you could retrieve all planets with a single petition, so [I pivoted in that direction](https://github.com/usersaurus/seedtag-tech-test/commit/ff17f347a5144d68eb1bb60f19a1eaaa3ed37dd3)
 
+## Resident lists are not being fetched in advance
+
+Since it was the only oportunity to show some async data management, I thought it could be a good idea to fetch the residents list to the graphQL api only when needed. That's why it take some time to show it, but it's fast anyway, and the loading process is under a skeleton animation, so it's kinda cool.
+
 ## Automatic deploys with Netlify
 
 An automatic deploy triggers everytime I push anything to the main branch. It also runs all the tests before deploying anything, and things are only published when everything is green.

@@ -18,6 +18,7 @@ const FormField = ({ name, errors = {}, register }: FormFieldProps) => {
         {...register!(name)}
         color={hasError ? 'amber' : undefined}
         variant="soft"
+        aria-label={name}
       />
       <p>{errors[name]?.message?.toString()}</p>
     </>

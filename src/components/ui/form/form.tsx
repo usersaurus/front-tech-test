@@ -21,7 +21,7 @@ function Form<T extends FieldValues>({ defaultValues, formSchema, onSubmit, chil
   });
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} name="form">
       {React.Children.map(children, (child) => {
         if (!React.isValidElement(child)) return child;
 

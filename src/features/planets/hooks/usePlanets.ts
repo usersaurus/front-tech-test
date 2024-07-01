@@ -12,12 +12,6 @@ export const usePlanets = () => {
   const getPlanetById = useSWStore(state => state.getPlanetById);
   const updatePlanet = useSWStore(state => state.updatePlanet);
 
-  const setupAddPlanet = (planet: Omit<Planet, 'id'>) => {
-    const id = idGenerator();
-
-    addPlanet({ ...planet, id });
-  };
-
   const setupUpdatePlanet = (data: ToFormPlanet, id: Planet['id']) => {
     const planet = {
       name: data.name,
@@ -29,6 +23,21 @@ export const usePlanets = () => {
     } as Planet;
 
     updatePlanet(planet);
+  };
+
+  const setupAddPlanet = (data: ToFormPlanet) => {
+    const planet = {
+      name: data.name,
+      diameter: data.diameter,
+      climates: data.climates.split(',').map(c => c.trim()),
+      terrains: data.terrains.split(',').map(t => t.trim()),
+      population: data.population,
+      id: idGenerator()
+    } as Planet;
+
+    console.log('planet', planet);
+
+    addPlanet(planet);
   };
 
   return {

@@ -1,1 +1,3 @@
-export const idGenerator = () => btoa(Date.now().toString()); //uuidv4();
+import { v4 as uuidv4 } from 'uuid';
+
+export const idGenerator = () => uuidv4();

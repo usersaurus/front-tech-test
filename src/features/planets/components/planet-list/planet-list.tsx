@@ -1,5 +1,5 @@
 import { Planet } from '@/types/planet';
-import { Box, Card, Flex, Grid, Heading } from '@radix-ui/themes';
+import { Box, Card, Flex, Grid } from '@radix-ui/themes';
 import PlanetView from '../planet-view/planet-view';
 import PlanetRowActions from './planet-row-actions';
 
@@ -10,7 +10,6 @@ interface PlanetListProps {
 const PlanetList = ({ planets }: PlanetListProps) => {
   return (
     <Box>
-      <Heading mb="4">Planets</Heading>
       <Grid gap="4" columns={{
         initial: "1",
         sm: "2",

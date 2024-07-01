@@ -4,7 +4,7 @@ import { FieldValues, Resolver, UseFormProps, useForm } from "react-hook-form";
 import { ObjectSchema } from "yup";
 
 type FormProps<T extends FieldValues> = {
-  defaultValues: UseFormProps<T>['defaultValues'];
+  defaultValues?: UseFormProps<T>['defaultValues'];
   formSchema: ObjectSchema<T>;
   onSubmit: (data: T) => void;
   children: React.ReactNode;

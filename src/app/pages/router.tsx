@@ -44,6 +44,14 @@ export const createRouter = () => createBrowserRouter([
 
               return { Component: EditPlanetRoute };
             },
+          },
+          {
+            path: 'create',
+            lazy: async () => {
+              const { CreatePlanetRoute } = await import('@/app/pages/planets/create-planet');
+
+              return { Component: CreatePlanetRoute };
+            },
           }
         ]
       }

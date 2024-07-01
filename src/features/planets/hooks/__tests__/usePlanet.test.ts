@@ -22,9 +22,9 @@ describe('usePlanet', () => {
       result.current.addPlanet({
         name: 'test planet',
         diameter: 10465,
-        climates: ['arid'],
+        climates: 'arid, windy',
         population: 200000,
-        terrains: ['desert']
+        terrains: 'desert'
       });
     });
 
@@ -33,7 +33,7 @@ describe('usePlanet', () => {
       {
         name: 'test planet',
         diameter: 10465,
-        climates: ['arid'],
+        climates: ['arid', 'windy'],
         population: 200000,
         terrains: ['desert'],
         id: expectedId

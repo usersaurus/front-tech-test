@@ -1,6 +1,6 @@
 import { Flex, IconButton } from "@radix-ui/themes";
 import DeletePlanet from "../delete-planet";
-import BackButton from "./back-button";
+import BackButton from "@/components/back-button";
 import { usePlanets } from "../../hooks/usePlanets";
 import { Pencil1Icon } from "@radix-ui/react-icons";
 import { useNavigate } from "react-router-dom";

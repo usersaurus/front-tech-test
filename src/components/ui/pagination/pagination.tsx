@@ -37,7 +37,7 @@ const Pagination = ({ current, total, onChange }: PaginationProps) => {
       >
         <CaretLeftIcon />
       </IconButton>
-      <span>{currentPage}</span>
+      <span aria-label="current page">{currentPage}</span>
       <IconButton onClick={handleNext}
         disabled={buttonStatus.next}
         aria-label="next button"

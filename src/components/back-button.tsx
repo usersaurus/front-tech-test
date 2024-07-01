@@ -6,8 +6,8 @@ const BackButton = () => {
   const navigate = useNavigate();
 
   return (
-    <IconButton onClick={() => navigate(-1)} type="button">
-      <ArrowLeftIcon />
+    <IconButton aria-label="back button" onClick={() => navigate(-1)} type="button">
+      <ArrowLeftIcon aria-label="back icon" />
     </IconButton>
   );
 };

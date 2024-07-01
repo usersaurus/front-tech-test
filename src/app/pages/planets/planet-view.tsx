@@ -9,11 +9,11 @@ export const PlanetViewRoute = () => {
   if (!id) return <>Planet not found</>;
 
   return (
-    <Flex justify="center" m={{
+    <Flex justify="center" align="center" height="100%" m={{
       initial: "0",
       xs: "4"
     }}>
-      <Card size="4">
+      <Card size="4" m="auto">
         <Flex gap="8" direction={{
           'initial': 'column',
           'xs': 'row'

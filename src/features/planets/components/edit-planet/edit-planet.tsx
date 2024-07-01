@@ -1,4 +1,4 @@
-import { Button, Container, Heading } from "@radix-ui/themes";
+import { Button, Container, Flex, Heading } from "@radix-ui/themes";
 import { formSchema } from "../../utils/form-schema";
 import { ToFormPlanet } from "../../types/to-form-planet";
 import { Planet } from "@/types/planet";
@@ -7,6 +7,7 @@ import './edit-planet.module.css';
 import FormField from "@/components/ui/form/form-field";
 import { toast } from "react-toastify";
 import Form from "@/components/ui/form/form";
+import BackButton from "@/components/back-button";
 
 type EditPlanetProps = {
   planet: Planet;
@@ -41,7 +42,10 @@ const EditPlanet = ({ planet }: EditPlanetProps) => {
         <FormField name="population" />
         <FormField name="diameter" />
 
-        <Button type="submit" mt="4">Submit</Button>
+        <Flex gap="4" justify="end">
+          <Button type="submit">Update</Button>
+          <BackButton />
+        </Flex>
       </Form>
     </Container>
   );

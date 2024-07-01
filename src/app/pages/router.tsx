@@ -31,7 +31,6 @@ export const createRouter = () => createBrowserRouter([
           {
             path: '/:id',
             lazy: async () => {
-              console.log('planet view');
               const { PlanetViewRoute } = await import('@/app/pages/planets/planet-view');
 
               return { Component: PlanetViewRoute };

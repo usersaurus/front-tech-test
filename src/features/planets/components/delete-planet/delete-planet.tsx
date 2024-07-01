@@ -3,6 +3,8 @@ import { Planet } from "@/types/planet";
 import { usePlanets } from "@/features/planets/hooks/usePlanets";
 import { TrashIcon } from "@radix-ui/react-icons";
 import { IconButton, Tooltip } from "@radix-ui/themes";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 interface DeletePlanetProps {
   planet: Planet;
@@ -10,6 +12,7 @@ interface DeletePlanetProps {
 
 const DeletePlanet = ({ planet }: DeletePlanetProps) => {
   const { deletePlanet } = usePlanets();
+  const navigate = useNavigate();
 
   return (
 
@@ -20,6 +23,8 @@ const DeletePlanet = ({ planet }: DeletePlanetProps) => {
       cancelText="Cancel"
       onConfirm={() => {
         deletePlanet(planet);
+        toast.success("Planet deleted successfully");
+        navigate("/");
       }}
       button={
 

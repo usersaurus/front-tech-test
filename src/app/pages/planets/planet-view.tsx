@@ -9,7 +9,7 @@ export const PlanetViewRoute = () => {
   if (!id) return <>Planet not found</>;
 
   return (
-    <Flex justify="center" align="center" height="100%" m={{
+    <Flex justify="center" align="center" height="100vh" m={{
       initial: "0",
       xs: "4"
     }}>

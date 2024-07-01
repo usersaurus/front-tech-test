@@ -8,6 +8,6 @@ export const AppRoot = () => {
       <Container>
         <Outlet />
       </Container>
-    </Box>
+    </Box >
   );
 };

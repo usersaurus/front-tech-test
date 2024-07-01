@@ -35,8 +35,6 @@ export const usePlanets = () => {
       id: idGenerator()
     } as Planet;
 
-    console.log('planet', planet);
-
     addPlanet(planet);
   };
 

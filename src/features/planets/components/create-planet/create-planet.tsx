@@ -1,4 +1,4 @@
-import { Button, Container, Heading } from "@radix-ui/themes";
+import { Button, Container, Flex, Heading } from "@radix-ui/themes";
 import { formSchema } from "../../utils/form-schema";
 import { ToFormPlanet } from "../../types/to-form-planet";
 import { usePlanets } from "../../hooks/usePlanets";
@@ -6,15 +6,17 @@ import './create-planet.module.css';
 import FormField from "@/components/ui/form/form-field";
 import { toast } from "react-toastify";
 import Form from "@/components/ui/form/form";
+import BackButton from "@/components/back-button";
+import { useNavigate } from "react-router-dom";
 
 const CreatePlanet = () => {
   const { addPlanet } = usePlanets();
+  const navigate = useNavigate();
 
   const onSubmit = (data: ToFormPlanet) => {
-    console.log(data);
     addPlanet(data);
-
     toast.success("Planet created successfully");
+    navigate("/");
   };
 
   return (
@@ -29,8 +31,10 @@ const CreatePlanet = () => {
         <FormField name="terrains" />
         <FormField name="population" />
         <FormField name="diameter" />
-
-        <Button type="submit" mt="4">Submit</Button>
+        <Flex gap="4" justify="end">
+          <Button type="submit">Create</Button>
+          <BackButton />
+        </Flex>
       </Form>
     </Container>
   );

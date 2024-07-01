@@ -6,7 +6,7 @@ const BackButton = () => {
   const navigate = useNavigate();
 
   return (
-    <IconButton onClick={() => navigate(-1)}>
+    <IconButton onClick={() => navigate(-1)} type="button">
       <ArrowLeftIcon />
     </IconButton>
   );

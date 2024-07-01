@@ -1,4 +1,4 @@
 .background {
   background-image: url('../assets/stars.gif');
-  background-size: repeat;
+  background-repeat: repeat;
 }

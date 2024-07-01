@@ -11,7 +11,7 @@ const AddButton = (props: AddButtonProps) => {
 
   return (
     <Tooltip content="Add planet">
-      <IconButton onClick={() => navigate('/create')} {...props}>
+      <IconButton onClick={() => navigate('/create')} {...props} type="button">
         <PlusCircledIcon />
       </IconButton>
     </Tooltip>

@@ -3,17 +3,17 @@ import { FieldErrors, UseFormRegister } from "react-hook-form";
 import { ToFormPlanet } from "../../types/to-form-planet";
 
 type FormFieldProps = {
-  fieldName: keyof ToFormPlanet;
-  errors: FieldErrors<ToFormPlanet>;
-  register: UseFormRegister<ToFormPlanet>;
+  name: keyof ToFormPlanet;
+  errors?: FieldErrors<ToFormPlanet>;
+  register?: UseFormRegister<ToFormPlanet>;
 };
 
-const FormField = ({ fieldName, errors = {}, register }: FormFieldProps) => {
+const FormField = ({ name, errors = {}, register }: FormFieldProps) => {
   return (
     <>
-      <label htmlFor="name">{fieldName}</label>
-      <TextField.Root placeholder={fieldName} {...register(fieldName)} />
-      <p>{errors[fieldName]?.message}</p>
+      <label htmlFor="name">{name}</label>
+      <TextField.Root placeholder={name} {...register!(name)} />
+      <p>{errors[name]?.message}</p>
     </>
   );
 };

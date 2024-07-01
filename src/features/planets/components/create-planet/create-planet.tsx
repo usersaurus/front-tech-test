@@ -20,10 +20,7 @@ const CreatePlanet = () => {
   };
 
   return (
-    <Container width={{
-      initial: "80vw",
-      xs: "50vw"
-    }}>
+    <Container maxWidth="800px" width={{ initial: "80vw" }}>
       <Heading mb="4">Create Planet</Heading>
       <Form onSubmit={onSubmit} formSchema={formSchema}>
         <FormField name="name" />

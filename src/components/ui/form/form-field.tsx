@@ -8,10 +8,17 @@ type FormFieldProps = {
 };
 
 const FormField = ({ name, errors = {}, register }: FormFieldProps) => {
+  const hasError = errors[name]?.message;
+  console.log(errors[name]?.message?.toString());
   return (
     <>
       <label htmlFor="name">{name}</label>
-      <TextField.Root placeholder={name} {...register!(name)} />
+      <TextField.Root
+        placeholder={name}
+        {...register!(name)}
+        color={hasError ? 'amber' : undefined}
+        variant="soft"
+      />
       <p>{errors[name]?.message?.toString()}</p>
     </>
   );

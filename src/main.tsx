@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Theme appearance='dark' accentColor='ruby'>
+    <Theme appearance='dark' accentColor='teal'>
       <App />
     </Theme>
   </React.StrictMode>,

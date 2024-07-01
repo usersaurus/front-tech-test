@@ -29,7 +29,7 @@ export const createRouter = () => createBrowserRouter([
             },
           },
           {
-            path: '/:id',
+            path: ':id',
             lazy: async () => {
               const { PlanetViewRoute } = await import('@/app/pages/planets/planet-view');
 

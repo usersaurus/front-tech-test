@@ -13,4 +13,6 @@ Test are launched by `vitest` running
 
 ## Extra info
 
-- [Folder structure](docs/folder-structure.md)
+- [Folder structure](docs/FOLDER-STRUCTURE.md)
+- [Stack](docs/STACK.md)
+- [Notes](docs/NOTES.md)

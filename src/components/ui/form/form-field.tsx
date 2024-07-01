@@ -1,11 +1,10 @@
 import { TextField } from "@radix-ui/themes";
-import { FieldErrors, UseFormRegister } from "react-hook-form";
-import { ToFormPlanet } from "../../types/to-form-planet";
+import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 
 type FormFieldProps = {
-  name: keyof ToFormPlanet;
-  errors?: FieldErrors<ToFormPlanet>;
-  register?: UseFormRegister<ToFormPlanet>;
+  name: string;
+  errors?: FieldErrors<FieldValues>;
+  register?: UseFormRegister<FieldValues>;
 };
 
 const FormField = ({ name, errors = {}, register }: FormFieldProps) => {
@@ -13,7 +12,7 @@ const FormField = ({ name, errors = {}, register }: FormFieldProps) => {
     <>
       <label htmlFor="name">{name}</label>
       <TextField.Root placeholder={name} {...register!(name)} />
-      <p>{errors[name]?.message}</p>
+      <p>{errors[name]?.message?.toString()}</p>
     </>
   );
 };

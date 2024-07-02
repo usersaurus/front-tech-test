@@ -2,6 +2,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import React from "react";
 import { FieldValues, Resolver, UseFormProps, useForm } from "react-hook-form";
 import { ObjectSchema } from "yup";
+import './form.module.css';
 
 type FormProps<T extends FieldValues> = {
   defaultValues?: UseFormProps<T>['defaultValues'];

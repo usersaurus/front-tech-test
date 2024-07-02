@@ -1,4 +1,4 @@
-import CreatePlanetContainer from "@/features/planets/components/create-planet/create-planet-container";
+import CreatePlanet from "@/features/planets/components/create-planet";
 import { Card, Flex } from "@radix-ui/themes";
 
 export const CreatePlanetRoute = () => {
@@ -8,7 +8,7 @@ export const CreatePlanetRoute = () => {
       xs: "4"
     }}>
       <Card size="4" m="auto">
-        <CreatePlanetContainer />
+        <CreatePlanet />
       </Card>
     </Flex>
   );

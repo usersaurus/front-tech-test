@@ -3,7 +3,6 @@ import { formSchema } from "../../utils/form-schema";
 import { ToFormPlanet } from "../../types/to-form-planet";
 import { Planet } from "@/types/planet";
 import { usePlanets } from "../../hooks/usePlanets";
-import './edit-planet.module.css';
 import FormField from "@/components/ui/form/form-field";
 import { toast } from "react-toastify";
 import Form from "@/components/ui/form/form";

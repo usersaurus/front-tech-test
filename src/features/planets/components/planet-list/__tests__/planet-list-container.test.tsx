@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import { describe, it, beforeAll, expect } from 'vitest';
 import PlanetListContainer from '../planet-list-container';
 import { useSWStore } from '@/store';
@@ -24,5 +24,17 @@ describe('PlanetListContainer', () => {
     expect(screen.getByRole('button', { name: 'next button' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'previous button' })).toBeInTheDocument();
     expect(screen.getByLabelText('current page')).toBeInTheDocument();
+  });
+
+  it('should show two buttons inside each card', () => {
+    planets.forEach(() => {
+      const cards = screen.getAllByLabelText('planet card');
+
+      cards.forEach(card => {
+        const { getByRole } = within(card);
+        expect(getByRole('button', { name: `view button` })).toBeInTheDocument();
+        expect(getByRole('button', { name: `delete button` })).toBeInTheDocument();
+      });
+    });
   });
 });

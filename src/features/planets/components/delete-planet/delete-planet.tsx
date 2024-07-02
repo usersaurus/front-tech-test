@@ -27,8 +27,7 @@ const DeletePlanet = ({ planet }: DeletePlanetProps) => {
         navigate("/");
       }}
       button={
-
-        <IconButton>
+        <IconButton aria-label="delete button">
           <Tooltip content="Delete planet">
             <TrashIcon />
           </Tooltip>

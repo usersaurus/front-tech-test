@@ -18,7 +18,7 @@ const PlanetRowActions = ({ planet }: PlanetRowActionsProps) => {
   return (
     <Flex gap="3">
       <Tooltip content="View details">
-        <IconButton onClick={handleView}>
+        <IconButton onClick={handleView} aria-label="view button">
           <EyeOpenIcon />
         </IconButton>
       </Tooltip>

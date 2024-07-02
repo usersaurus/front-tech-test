@@ -16,7 +16,7 @@ const PlanetList = ({ planets }: PlanetListProps) => {
         md: "3",
       }}>
         {planets.map((planet) => (
-          <Card key={planet.id} size="3">
+          <Card key={planet.id} size="3" aria-label="planet card">
             <Flex
               justify="between"
               direction="column"

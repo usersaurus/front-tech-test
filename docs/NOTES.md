@@ -42,9 +42,11 @@ There are a good number of tests of different types and complexities, but not al
 
 Most of the styles are added using the props of Radix UI components, but in the cases where styles were longer than I think they should be for a JSX, like the styles of the form component.
 
+Anyway, I do not have a strong position on this and only took this approach because I thought it could be the fastest and cleanest one for the tech test needs.
+
 ## Automatic deploys with Netlify
 
 An automatic deploy triggers everytime I push anything to the main branch. It also runs all the tests before deploying anything, and things are only published when everything is green.
 
-![alt text](image-4.png)
+![alt text](image-5.png)
 

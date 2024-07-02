@@ -37,6 +37,11 @@ Apart from that, the usePlanet hooks manages any needed transformation, keeping 
 
 There are a good number of tests of different types and complexities, but not all components were covered because of time constraints.
 
+
+## Styles
+
+Most of the styles are added using the props of Radix UI components, but in the cases where styles were longer than I think they should be for a JSX, like the styles of the form component.
+
 ## Automatic deploys with Netlify
 
 An automatic deploy triggers everytime I push anything to the main branch. It also runs all the tests before deploying anything, and things are only published when everything is green.

@@ -1,4 +1,4 @@
-# Seedtag tech test
+# Front tech test
 
 ## Running the app
 

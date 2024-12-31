@@ -4,7 +4,7 @@
 
 You can take a look at the application in this netlify url
 
-<span style="font-size:30px;">[Seedtag front test](https://seedtag-front-test.netlify.app/)</span>
+~~<span style="font-size:30px;">[Seedtag front test](https://seedtag-front-test.netlify.app/)</span>~~ the graphQL endpoint is down, so not working anymore :(
 
 but in case you want to run it locally:
 > `yarn`
